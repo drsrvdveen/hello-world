@@ -2,11 +2,11 @@ var tekstGrootte = 18;
 var kolomGrootte = 0;
 var kolomStap = 330;
 var rijenPerKolom = 20;
-var perfecteUitkomstenMeenemen = false;
+var perfecteUitkomstenMeenemen = true;
 
-var beginx = 100;
-var eindx = 500;
-var stapx = 1;
+var beginx = 10;
+var eindx = 20;
+var stapx = 0.1;
 
 var beginy = 45;
 var eindy = 75;
@@ -14,7 +14,7 @@ var stapy = 1;
 
 var decimalen = 10;
 var verschil = 1;
-var minimumVerschilWaarde = 10;
+var minimumVerschilWaarde = 200;
 var f,z,fAfgerond,zAfgerond;
 var tekst = "AAN";
 
@@ -44,7 +44,7 @@ function draw() {
             y = round(y*pow(10,decimalen))/pow(10,decimalen);
             // **********************
             // f = lenzenFormule(x,y);
-            f = snelheidKinetisch(x,y);
+            f = gravitatieEnergie(x,y);
             // **********************
             fAfgerond = round(f*pow(10,decimalen))/pow(10,decimalen);
             z = terugBrengen(f,decimalen);
@@ -69,6 +69,11 @@ function draw() {
             }
         }
     }
+}
+
+function gravitatieEnergie(M,r) {
+    var f = 66743015 * M / r;
+    return f;
 }
 
 function snelheidKinetisch(E,m) {
@@ -104,9 +109,6 @@ function bepaalVerschil(x,xaf) {
     }
     if (dif != 0) {
         dif = round(1/dif);
-    }
-    else {
-        //dif = 9999;
     }
     return dif;
 }
