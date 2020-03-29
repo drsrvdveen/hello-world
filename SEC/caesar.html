@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../OO/CSS/games.css">
+    <script src="JS/p5.min.js"></script>
+    <script src='JS/caesar.js'></script> 
+  </head>
+  <body>
+    <div class="container" id="clicker">
+      <blockquote>
+        <h1>Caesar</h1>
+      </blockquote>
+    </div>
+
+<form id="invoercijfertekst">
+<textarea id="cijfertekst" rows="10" cols="50" style="margin-bottom: 10px;">
+</textarea>
+</div>
+<input type="button" value="opdracht A" onclick="tekstInvullen('caesarA')">
+
+<input type="button" value="Analyseer!" onClick="analyse(document.getElementById('cwlform').text.value),drawFreqChart(true)">
+<input type="reset" value="Leegmaken" onClick="resetCaesarCode()">
+</div>
+</div>
+</div>
+</form>
+
+    
+    <div class="container">
+      <div id="processing" style='border: 1px dashed grey; padding: 10px;'></div>
+    </div>
+  </body>
+</html>
