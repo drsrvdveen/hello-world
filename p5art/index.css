@@ -1,0 +1,181 @@
+body {
+	 background-image: linear-gradient(to bottom,  rgb(255, 255, 255), rgb(155, 155, 155), rgb(0, 0, 0));
+	background-repeat: no-repeat;//
+background-size: 100%;
+}
+
+p {
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Source Code Pro', monospace  Times, serif ;
+  font-size: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: repeating-linear-gradient(to right, rgb(250, 151, 151), rgb(255, 195, 138), rgb(241, 252, 150), rgb(172, 255, 169),rgb(164, 212, 252),rgb(244, 157, 255)); 
+-webkit-background-clip: text;
+  color: transparent;
+}
+
+p {
+  animation: animated-text 1s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+}
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 700px;}
+}
+
+.bovenblok {
+  background-color: rgba(255, 255, 255, 0);
+  margin-top:-70px;
+  height: 150px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+ border-radius: 10px 10px 0px 0px;
+ }
+
+.container {
+  background-color: rgba(255, 255, 255, 0);
+  height: 600px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+   margin-bottom: 50px;
+ border-radius: 0px 0px 10px 10px;
+ }
+  
+    .a{
+   background-color:rgb(41, 128, 187);
+  height: 200px;
+  width: 200px;
+  border-radius: 0px 0px 10px 10px;
+  margin-left: 340px;
+margin-top: 40px;
+   position: absolute;
+      }
+
+.b{
+   background-color:rgb(41, 128, 187);
+   height: 100px;
+  width: 100px;
+ border-radius: 0px 0px 10px 10px;
+  margin-left: 610px;
+margin-top: 40px;
+   position: absolute;
+      }
+
+      .c{
+   background-color:rgb(41, 128, 187);
+   height: 100px;
+  width: 100px;
+ border-radius: 0px 0px 10px 10px;
+  margin-left: 340px;
+margin-top: 310px;
+   position: absolute;
+      }
+
+      .d{
+   background-color:rgb(41, 128, 187);
+   height: 100px;
+  width: 100px;
+ border-radius: 0px 0px 10px 10px;
+  margin-left: 610px;
+margin-top: 310px;
+   position: absolute;
+      }
+
+    .twee {
+  position: relative;
+  width: 250px;
+  height:250px;
+}
+
+.image {
+  display: block;
+  width: 250px;
+  height: 250px;
+}
+
+.overlaya {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  opacity:0.5;
+width: 0;
+  height: 100%;
+  transition: .7s ease;
+}
+
+.twee:hover .overlaya {
+  width: 100%;
+}
+
+.overlayb {
+ position: absolute;
+  bottom:100%;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  opacity:0.5;
+  width: 100%;
+  height:0;
+  transition: .7s ease;
+}
+
+.twee:hover .overlayb {
+bottom: 0;
+  height: 100%;
+}
+
+.overlayc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  opacity:0.5;
+  width: 100%;
+  height: 0;
+  transition: .7s ease;
+}
+
+.twee:hover .overlayc {
+height: 100%;
+}
+.overlayd {
+ position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  opacity:0.5;
+  width: 0;
+  height: 100%;
+  transition: .7s ease;
+}
+
+.twee:hover .overlayd {
+ width: 100%;
+  left: 0;
+}
+
+.text {
+  color: whitesmoke;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+    

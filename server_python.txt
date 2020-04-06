@@ -8,7 +8,7 @@ Dit doe je door simpelweg in de adresbalk van jouw project
 
 http://gitpod.io#
 
-in te typen VOOR het GutHub-adres.
+in te typen VOOR het GitHub-adres.
 
 Als je tevreden bent of aan het eind van het les zit, bewaar je een nieuwe versie door:
 1) de wijzigingen te selecteren (stage changes)

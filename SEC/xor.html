@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="CSS/security.css">
     <script src="JS/p5.min.js"></script>
-    <script src='JS/caesar.js'></script>
+    <script src='JS/xor.js'></script>
     
   </head>
   <body>
     <div class="container" id="clicker">
       <blockquote>
-        <h1>Caesarversleuteling: berichten versleutelen</h1>
+        <h1>vergelijking AND, OR en XOR</h1>
         <button onclick="window.location.href = 'caesar.html'">Caesar</button>
         <button onclick="window.location.href = 'caesarfreq.html'">Caesar - freq</button>
       </blockquote>
@@ -25,28 +25,10 @@
                     <button class="hoofdstuk" onclick="tekstInvullen('caesarC');">tekst #3</button>
                     <button class="hoofdstuk" onclick="tekstInvullen('reset');">reset</button>
                 </td>
-            </tr>        
-            <tr>
-                <td>
-                    <form id="invoercijfertekst">
-                        <textarea id="cijfertekst" rows="10" cols="46">bericht</textarea>
-                    </form>
-                </td>
-                <td>
-                    <div id="uitvoerklaretekst" style="width: 431px; height: 190px; margin-top: -4px;"><i>hier komt de uitvoer.</i></div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: justify;";>
-                    Vul handmatig een bericht in of gebruik de buttons om een tekst te selecteren. Met de pijltjestoetsen kun je vervolgens de sleutel aanpassen
-                    om het bericht te versleutelen.
-                </td>
-            </tr>            
+            </tr>          
         </table>
       <div id="processing" style='border: 1px dashed grey; padding: 10px;'>
-        <canvas id="canvas" width="400" height="400" style="background-color: silver;"></canvas>
       </div>
     </div>
-    <script type="text/javascript" src="JS/moduloKlok.js"></script>
   </body>
 </html>

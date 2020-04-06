@@ -1,0 +1,63 @@
+body {
+	  background-image: linear-gradient(to bottom,  rgb(255, 255, 255), rgb(189, 189, 189), rgb(129, 129, 129));
+	background-repeat: no-repeat;
+background-size: 100%;
+}
+
+p {
+  font-family: 'Source Code Pro', monospace  Times, Times New Roman, serif ;
+  font-size: 12px;
+  line-height: 200%;
+color:black;
+}
+
+h1{
+     text-align:center;
+     font-size:100px;
+     color: rgb(115, 115, 115);
+     font-family: "Times New Roman", Times, serif;
+}
+.bovenblok {
+  background-color: rgb(255, 255, 255);
+  border-color:black;
+  height: 150px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+margin-top:50px;
+ border-radius: 10px 10px 0px 0px;
+ }
+
+
+#sketch-holder {
+  background-color: rgba(255, 255, 255, 0);
+display:flex;
+justify-content: center;
+margin-top:10px;
+ }
+  
+  .tooltip {
+  position: relative;
+  display: inline-block;
+  font-size: 50px;
+color:rgb(95, 88, 88);
+margin-top:-140px;
+margin-left:20px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  height:220px;
+  background-color: rgb(161, 161, 161);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;  
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

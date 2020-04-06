@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="CSS/security.css">
     <script src="JS/p5.min.js"></script>
-    <script src='JS/caesar.js'></script>
-    
+    <script src='JS/caesarfreq.js'></script> 
   </head>
   <body>
     <div class="container" id="clicker">
       <blockquote>
-        <h1>Caesarversleuteling: berichten versleutelen</h1>
+        <h1>Caesarversleuteling ontcijferen met frequentieanalyse</h1>
         <button onclick="window.location.href = 'caesar.html'">Caesar</button>
         <button onclick="window.location.href = 'caesarfreq.html'">Caesar - freq</button>
       </blockquote>
@@ -23,13 +22,15 @@
                     <button class="hoofdstuk" onclick="tekstInvullen('caesarA');">tekst #1</button>
                     <button class="hoofdstuk" onclick="tekstInvullen('caesarB');">tekst #2</button>
                     <button class="hoofdstuk" onclick="tekstInvullen('caesarC');">tekst #3</button>
+                    <button class="hoofdstuk" onclick="tekstInvullen('caesarD');">tekst #4</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer();">verwerk</button>
                     <button class="hoofdstuk" onclick="tekstInvullen('reset');">reset</button>
                 </td>
             </tr>        
             <tr>
                 <td>
                     <form id="invoercijfertekst">
-                        <textarea id="cijfertekst" rows="10" cols="46">bericht</textarea>
+                        <textarea id="cijfertekst" rows="10" cols="46">cijfertekst</textarea>
                     </form>
                 </td>
                 <td>
@@ -38,15 +39,12 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: justify;";>
-                    Vul handmatig een bericht in of gebruik de buttons om een tekst te selecteren. Met de pijltjestoetsen kun je vervolgens de sleutel aanpassen
-                    om het bericht te versleutelen.
+                    Vul handmatig een cijfertekst in en klik daarna op verwerk of gebruik de buttons om een tekst te selecteren.
+                    Met de pijltjestoetsen kun je vervolgens de sleutel aanpassen tot je het bericht hebt ontcijferd.                    
                 </td>
             </tr>            
         </table>
-      <div id="processing" style='border: 1px dashed grey; padding: 10px;'>
-        <canvas id="canvas" width="400" height="400" style="background-color: silver;"></canvas>
-      </div>
+      <div id="processing" style='border: 1px dashed grey; padding: 10px;'></div>
     </div>
-    <script type="text/javascript" src="JS/moduloKlok.js"></script>
   </body>
 </html>
