@@ -15,14 +15,22 @@ var frequentiesNederlands = [7.49,1.58,1.24,5.93,18.91,0.81,3.40,2.38,6.50,1.46,
 var frequentieKlareTekst = [];
 var frequentiePercentage = [];
 
+var muisKolom;
+var muisRij;
+
 function setup() {
     canvas = createCanvas(1000,450);
     colorMode(RGB,255,255,255,1);
+    background('silver');
     fill(0);
     textFont("Monospace");
     canvas.parent('processing');
     frameRate(10);
     verwerkInvoer();
+}
+
+function draw() {
+    tekenVierkant();
 }
 
 function keyReleased() {
@@ -35,6 +43,37 @@ function keyReleased() {
         verwerkInvoer();
     }    
   return false;
+}
+
+function tekenVierkant() {
+    push();
+    textSize(14);
+    textAlign(CENTER,CENTER);
+    var grootte = 17;
+    var offset = 3;
+    muisKolom = 26;
+    muisKolom = floor((mouseX - offset) / grootte);
+    muisRij = 26;
+    muisRij = floor((mouseY - offset) / grootte);
+    translate(5,5);
+    for (var k = 0;k < 26; k++) {
+        for (var r = 0;r < 26; r++) {
+            if ((muisRij == r || muisKolom == k) && !(muisRij == r && muisKolom == k)) {
+                fill('orange');
+            }
+            else {
+                fill(255);
+            }
+            stroke(127);
+            strokeWeight(2);
+            rect(k*grootte,r*grootte,grootte,grootte);
+            fill(127);
+            noStroke();
+            var x = String.fromCharCode(65 + (k + r) % 26);
+            text(x.toLowerCase(),k*grootte + offset,r*grootte,grootte,grootte);
+        }
+    }
+    pop();
 }
 
 function tekstInvullen(t) {
