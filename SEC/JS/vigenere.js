@@ -3,9 +3,6 @@ var slB = "pyromanen";
 var vigA = "derapenzijngaar";
 var vigB = "komalshetluidt";
 
-slA = "babypanda";
-vigA = "morgenbenikjarig";
-
 var sleutel = slA;
 
 var sleutelLijst = [];

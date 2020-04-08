@@ -3,37 +3,34 @@ var pixelKleur;
 var rood,groen,blauw;
 var marge = 25;
 var kader = 300;
-var grensZW = 210;
+var grensZW;
 
 function preload() {
-  foto1 = loadImage("images/koe.jpg");          // 100
-  foto2 = loadImage("images/frankmiller.png");  // 110
-  foto3 = loadImage("images/bos.png");          // 210
+  foto1 = loadImage("images/koe.jpg");
+  foto2 = loadImage("images/frankmiller.png");
+  foto3 = loadImage("images/bos.png");
   // bron Frank Miller: http://www.cs.columbia.edu/~CS4HS/talks/FrankMillerOneTimePad.pdf
+  foto = foto3;
 }
-
-
-/*
-met knoppen foto selecteren
-met slider sensitivity
-met functie onload teken plaatjes
-dat moet dus inclusief verwerken oorpronkelijke plaatje
-onload kan één van de plaatjes zijn. Of niks dat je echt moet klikken
-Of knoppen and, or, xor? Nee, vergelijken is wel nuttig
-
-
-
-*/
 
 function setup() {
     canvas = createCanvas(1000,3*marge + 2* kader);
     colorMode(RGB,255,255,255,1);
-    fill(255);
     textFont("Monospace");
-    textSize(40);
+    textAlign(CENTER,CENTER);
     canvas.parent('processing');
-    frameRate(10);
-    foto = foto3;
+    verwerkInvoer(1);
+}
+
+function verwerkInvoer(f) {
+    if (f == 1) {foto = foto1; grensZW = 100;}
+    if (f == 2) {foto = foto2; grensZW = 110;}
+    if (f == 3) {foto = foto3; grensZW = 210;}
+    laadFoto();
+    toonFoto();
+}
+
+function laadFoto() {
     breedte = foto.width;
     hoogte = foto.height;
     if (breedte > hoogte) {
@@ -46,11 +43,11 @@ function setup() {
     }
     foto.resize(breedte,hoogte);
     foto.loadPixels();
-    noLoop();
 }
 
-function draw() {
+function toonFoto() {
     var gemkleur,fbit,sleutel;
+    push();
     background('silver');
     for (var k = 0;k < foto.width;k++) {
         for (var r = 0;r < foto.height;r++) {
@@ -68,8 +65,6 @@ function draw() {
             sleutel = round(random(0,1));
             stroke(255*sleutel);
             point(2*marge+kader+k,marge+r);
-            
-            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
             // AND
             stroke((fbit & sleutel)*255);
             point(marge+k,2*marge+kader+r);
@@ -81,11 +76,36 @@ function draw() {
             point(3*marge+2*kader+k,2*marge+kader+r);
         }
     }
-    fill(255);
-    var t1 = 1;
-    var t2 = 0;
-    var andt = t1 & t2;
-    var ort = t1 ^ t2;
-    // text("andt:"+andt+" ort:"+ort,500,50);
-    //text(" 0:"+pixelKleur[0]+" 1:"+pixelKleur[1]+" 2:"+pixelKleur[2]+" 0:"+pixelKleur[3],500,50);
+    noStroke();
+    textSize(30);
+    translate(marge + 0.25*kader,0.1*kader);
+    fill(192,192,192,.75);
+    rect(0,0,0.5*kader,1.5*marge);
+    fill('indianred');
+    text(' BRON',0,0,0.5*kader,1.5*marge);
+
+    translate(marge + kader,0);
+    fill(192,192,192,.75);
+    rect(0,0,0.5*kader,1.5*marge);
+    fill('indianred');
+    text(' SLEUTEL',0,0,0.5*kader,1.5*marge);
+
+    translate(-(marge + kader),marge + kader);
+    fill(192,192,192,.75);
+    rect(0,0,0.5*kader,1.5*marge);
+    fill('indianred');
+    text(' AND',0,0,0.5*kader,1.5*marge);
+
+    translate(marge + kader,0);
+    fill(192,192,192,.75);
+    rect(0,0,0.5*kader,1.5*marge);
+    fill('indianred');
+    text(' OR',0,0,0.5*kader,1.5*marge);    
+
+    translate(marge + kader,0);
+    fill(192,192,192,.75);
+    rect(0,0,0.5*kader,1.5*marge);
+    fill('indianred');
+    text(' XOR',0,0,0.5*kader,1.5*marge);     
+    pop();
 }

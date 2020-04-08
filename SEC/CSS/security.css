@@ -15,6 +15,11 @@ h1, h2, h3, h4, h5, h6, p {
     color: #2d4351;
 }
 
+table {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
 h1 {
     font-size: 24px;
 }
@@ -82,9 +87,10 @@ button:hover,button:focus, a.button:hover {
     max-width: 1040px;
 }
 
-#clicker,#code {
+#clicker {
     max-width: 1010px;
     background-color: #2d4351;
+    text-align: center;
 }
 
 #processing {
