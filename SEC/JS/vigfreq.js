@@ -1,11 +1,21 @@
-var caesarA = 'sxoxgxgmpbgmbz fttkm gxzxgmbxgahgwxkwsxlxgsxoxgmbz. pttkwx okbxgw, hgsx unbm bl oxbebz uxzktoxg. hi sbcg okhxzlm phkw bd hoxk mbxg cttk okbczxetmxg. fbllvabxg uxg bd wtg pxe whhw. wttkhf oxkmxe bd cx fbcg zxaxbf. zt bg hgsx lmtw gttk axm lmxkkxuhl. tvamxk wx fnsbxddhxixe tewttk lmttg xxg tfxkbdttglx xbd xg xxg vtgtwxlx ihinebxk. mnllxgbg ebzm xxg dblm fxm zhnw uxzktoxg xg xxg dttkm gttk xxg mpxxwx unbm otg wx khhyhoxkote.';
-var caesarB = 'sxwpnwb fjanw fn--vjja jjamrpn sxwpnwb. ju inp rt qnc inuo. fn irsw wd ennu frsina, bcjttnarp frsb irsw fn, knqjuen kjerwt, mrn vju pnfxamnw rb. fjc qnkknw fn ju wrnc fruunw xytwjyynw. fn ixdmnw qdw fnu nnwb ujcnw irnw qxn qnc vxnbc. fn, mjc fjanw frs. juun jwmnan vnwblqnw fjanw "in". "in", mrn wrncb bwjycnw nw wrncb ijpnw. "fjc?" inr kjerwt, "pxm? sn yajjc xena pxm? qdw fjavn ncnw rb qdw pxm." xy nwtnun "pxnrn tnanub" wj fnam rnmnannw mxxa xwb enajlqc.';
-var caesarC = 'op azdevzpedvzpedtpc azpede op azdevzped xpe azdevzpedpyazped.';
-var caesarD = 'no qvknno mkwzsxqryenob kxxoh grscuizbynemoxd rkn nkkb zbynemdlogkusxq fyyb jstx ckxngsmrpybwevo lst no qiwxkcdsoumvel yxnkxuc jyxnkqczvsmrd.';
-var sleutel = 0;
+var tekst1 = 'Aan mijn geliefde';
+var tekst2 = 'Kees Torn is een Nederlandse tekstschrijver en cabaretier. Torn groeide op in Maassluis. Na zijn middelbare school studeerde hij twee jaar piano aan het conservatorium. Omdat hij met plezier tekende, bezocht Kees Torn enkele jaren de Rotterdamse Academie voor Beeldende Kunsten, waar hij door studiegenote Gerrie Hondius uitgedaagd werd om cabaretteksten te schrijven voor een gezamenlijk programma.';
+var tekst3 = 'Vraag: waar laat ik Klaas de kaas aanpakken?';
+var algoritme;
+
+var sl1Poly = "abc";
+var sl2Poly = "aalscholververzamelaar";
+var sl3Poly = "polyalfabetische";
+var sl1 = 2;
+var sl2 = 13;
+var sl3 = 4;
+var sleutelReeks = [];
+var sleutelLijst = [];
+
 var cijferTekst = '';
 var cijferLijst = [];
 var klareTekst = '';
+var klareTekstPoly;
 var klareLijst = [];
 
 var code = [];
@@ -22,40 +32,127 @@ function setup() {
     textFont("Monospace");
     canvas.parent('processing');
     frameRate(10);
-    verwerkInvoer();
+    sleutel = sl1;
+    sleutelPoly = sl1Poly;
+    verwerkInvoer('poly');
 }
 
 function keyReleased() {
-    if (keyCode == 39 || keyCode == 38) {
-        sleutel++;
-        verwerkInvoer();
-    }
-    if (keyCode == 37 || keyCode == 40) {
-        sleutel--;
-        verwerkInvoer();
-    }    
+    if (algoritme == 'mono') {
+        if (keyCode == 39 || keyCode == 38) {
+            sleutel++;
+            verwerkInvoer('mono');
+        }
+        if (keyCode == 37 || keyCode == 40) {
+            sleutel--;
+            verwerkInvoer('mono');
+        }
+    }  
   return false;
 }
 
 function tekstInvullen(t) {
-	var tekstvak = document.getElementById('cijfertekst');
-    if (t == 'caesarA') {cijferTekst = caesarA;}
-    if (t == 'caesarB') {cijferTekst = caesarB;}
-    if (t == 'caesarC') {cijferTekst = caesarC;}
-    if (t == 'caesarD') {cijferTekst = caesarD;}
+
+    if (t == 'tekst1') {cijferTekst = tekst1; sleutel = sl1; sleutelPoly = sl1Poly;}
+    if (t == 'tekst2') {cijferTekst = tekst2; sleutel = sl2; sleutelPoly = sl2Poly;}
+    if (t == 'tekst3') {cijferTekst = tekst3; sleutel = sl3; sleutelPoly = sl3Poly;}
     if (t == 'reset') {cijferTekst = '';}
+    var tekstvak = document.getElementById('klaretekst');
     tekstvak.value = cijferTekst;
-    sleutel = 0;
-    verwerkInvoer();
+    verwerkInvoer(algoritme);
 }
 
-function verwerkInvoer() {
-    cijferTekst = document.getElementById('cijfertekst').value;
-    tekstNaarLijst(cijferTekst);
-    ontcijfer(cijferTekst);
+function verwerkInvoer(a) {
+    klareTekst = document.getElementById('klaretekst').value;
+    tekstNaarLijst(klareTekst);    
+    algoritme = a;
+    if (a == 'mono') {
+        vercijfer(klareTekst);
+        document.getElementById('uitvoercijfertekst').innerHTML = cijferTekst;
+    }
+    else {
+        klareTekstPoly = stripTekens(klareTekst);
+        klareLijst = tekstNaarLijstPoly(klareTekstPoly);
+        sleutelReeks = maakSleutelReeks(klareLijst);
+        cijferLijst = vercijferPoly(klareLijst,sleutelReeks);
+        cijferTekst = lijstNaarTekstPoly(cijferLijst);
+        var brokTekst;
+        brokTekst = hakTekst(cijferTekst);
+        document.getElementById('uitvoercijfertekst').innerHTML = brokTekst;
+    }
+    
     bepaalFrequentiePercentage(frequentieKlareTekst);
     toonGrafiek();
-    document.getElementById('uitvoerklaretekst').innerHTML = klareTekst;
+    
+}
+
+function hakTekst(input) {
+    var reeks = '';
+    var split = 15;
+    for (var n = 0;n < input.length;n++) {
+        reeks += input.charAt(n);  
+        if ((n + 1) % split == 0) {
+            reeks += ' ';
+        }          
+    }
+    return reeks;
+}
+
+function stripTekens(input) {
+    var reeks = '';
+    var r = 0;
+    input = input.toUpperCase();
+    for (var n = 0;n < input.length;n++) {
+        code[n] = input.charCodeAt(n);  
+        if (code[n] >= 65 && code[n] <= 90) {
+            reeks += input.charAt(n);
+        }          
+    }
+    reeks = reeks.toLowerCase();
+    return reeks;
+}
+
+function maakSleutelReeks(input) {
+    var reeks = [];
+    sleutelLijst = tekstNaarLijstPoly(sleutelPoly);
+    for (var i = 0; i < input.length;i++) {
+        reeks[i] = sleutelLijst[i % sleutelLijst.length];
+    }
+    return reeks;
+}
+
+function vercijferPoly(input,k) {
+    var lijst = [];
+    var flijst = [];
+    for (var n = 65;n <= 90; n++) {
+        frequentieKlareTekst[n] = 0;
+    }
+    var verschuiving;
+    for (var i = 0;i < input.length;i++) {
+        lijst[i] = input[i].charCodeAt(0);
+        verschuiving = k[i].charCodeAt(0);
+        
+        flijst[i] = ((lijst[i] + verschuiving - 2*(65+32)) % 26 + (65));
+        lijst[i] = String.fromCharCode((lijst[i] + verschuiving - 2*(65+32)) % 26 + (65 + 32));
+        frequentieKlareTekst[flijst[i]]++;
+    }
+    return lijst;
+}
+
+function lijstNaarTekstPoly(input) {
+    var tekst = "";
+    for (var l = 0;l < input.length;l++) {
+        tekst += input[l];
+    }
+    return tekst;
+}
+
+function tekstNaarLijstPoly(input) {
+    var lijst = [];
+    for (var n = 0;n < input.length;n++) {
+        lijst[n] = input.charAt(n);
+    }
+    return lijst;
 }
 
 function bepaalFrequentiePercentage(input) {
@@ -74,7 +171,11 @@ function toonGrafiek() {
     background('silver');
     fill(255);
     noStroke();
-    text("sleutel: "+sleutel,10,40);
+    var actieveSleutel = sleutel;
+    if (algoritme == 'poly') {
+        actieveSleutel = sleutelPoly;
+    }
+    text("sleutel: "+actieveSleutel,10,40);
     textSize(20);
     translate(50,50);
     var maxPerc = 18.91; // grootste in NL
@@ -90,7 +191,7 @@ function toonGrafiek() {
         var verschoven = l + sleutel + 65;
         if (verschoven < 65) {verschoven += 26;}
         if (verschoven > 90) {verschoven -= 26;}
-        text(String.fromCharCode(verschoven),l*35 + 4,390);
+        // text(String.fromCharCode(verschoven),l*35 + 4,390);
         fill(255,255,255,0.4);
         rect(l*35,350 - schaalFactor*frequentiesNederlands[l],20,schaalFactor*frequentiesNederlands[l]);        
         fill(0);
@@ -103,6 +204,29 @@ function tekstNaarLijst(input) {
     for (var n = 0;n < input.length;n++) {
         cijferLijst[n] = input.charAt(n);
     }
+}
+
+function vercijfer(input) {
+    cijferTekst = '';
+    for (var n = 65;n <= 90; n++) {
+        frequentieKlareTekst[n] = 0;
+    }    
+    input = input.toUpperCase();
+    for (var n = 0;n < input.length;n++) {
+        code[n] = input.charCodeAt(n);
+        if (code[n] >= 65 && code[n] <= 90) {
+            nwcode[n] = code[n] + sleutel % 26;
+            if (nwcode[n] < 65) {nwcode[n] = nwcode[n] + 26;}
+            if (nwcode[n] > 90) {nwcode[n] = nwcode[n] - 26;}
+            frequentieKlareTekst[nwcode[n]]++;
+        }
+        else {
+            nwcode[n] = code[n];
+        }
+        cijferLijst[n] = String.fromCharCode(nwcode[n]);
+        cijferTekst += cijferLijst[n];
+    }
+    cijferTekst = cijferTekst.toLowerCase();
 }
 
 function ontcijfer(input) {

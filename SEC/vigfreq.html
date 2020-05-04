@@ -9,7 +9,7 @@
   <body>
     <div class="container" id="clicker">
       <blockquote id="menu">
-        <h1>Frequentieanalyse met Vigen&egrave;re</h1>
+        <h1>Frequentieanalyse met Vigen&egrave;re (en Caesar)</h1>
       </blockquote>
     </div>
 
@@ -17,27 +17,28 @@
         <table>
             <tr>
                 <td colspan="2" style="text-align: center;";>
-                    <button class="hoofdstuk" onclick="tekstInvullen('tekstA');">tekst #1</button>
-                    <button class="hoofdstuk" onclick="tekstInvullen('tekstB');">tekst #2</button>
-                    <button class="hoofdstuk" onclick="verwerkInvoer();">&#128274; Kama</button>
-                    <button class="hoofdstuk" onclick="verwerkInvoer();">&#128274; Vig</button>                    
+                    <button class="hoofdstuk" onclick="tekstInvullen('tekst1');">tekst #1</button>
+                    <button class="hoofdstuk" onclick="tekstInvullen('tekst2');">tekst #2</button>
+                    <button class="hoofdstuk" onclick="tekstInvullen('tekst3');">tekst #3</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer('mono');">&#128274; Caesar</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer('poly');">&#128274; Vigen&egrave;re</button>                    
                     <button class="hoofdstuk" onclick="tekstInvullen('reset');">reset</button>
                 </td>
             </tr>        
             <tr>
                 <td>
-                    <form id="invoercijfertekst">
-                        <textarea id="cijfertekst" rows="10" cols="46">cijfertekst</textarea>
+                    <form id="invoerklaretekst">
+                        <textarea id="klaretekst" rows="10" cols="46">klare tekst</textarea>
                     </form>
                 </td>
                 <td>
-                    <div id="uitvoerklaretekst" style="width: 431px; height: 190px; margin-top: -4px;"><i>hier komt de uitvoer.</i></div>
+                    <div id="uitvoercijfertekst" style="width: 431px; height: 190px; margin-top: -4px;"><i>hier komt de uitvoer.</i></div>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align: justify;";>
-                    Vul handmatig een cijfertekst in en klik daarna op verwerk of gebruik de buttons om een tekst te selecteren.
-                    Met de pijltjestoetsen kun je vervolgens de sleutel aanpassen tot je het bericht hebt ontcijferd.                    
+                    Vul handmatig een klare tekst en kies vervolgens een versleutelingstechniek, of gebruik de voorgeprogrammeerde teksten.
+                    <br>Bij Caesarversleuteling kun je met de pijltjestoetsen de sleutel aanpassen.
                 </td>
             </tr>            
         </table>

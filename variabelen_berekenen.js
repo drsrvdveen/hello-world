@@ -2,19 +2,19 @@ var tekstGrootte = 18;
 var kolomGrootte = 0;
 var kolomStap = 330;
 var rijenPerKolom = 20;
-var perfecteUitkomstenMeenemen = true;
+var perfecteUitkomstenMeenemen = false;
 
-var beginx = 10;
-var eindx = 20;
-var stapx = 0.1;
+var beginx = 0.10;
+var eindx = 0.95;
+var stapx = 0.01;
 
-var beginy = 45;
-var eindy = 75;
+var beginy = 15;
+var eindy = 60;
 var stapy = 1;
 
-var decimalen = 10;
+var decimalen = 5;
 var verschil = 1;
-var minimumVerschilWaarde = 200;
+var minimumVerschilWaarde = 50;
 var f,z,fAfgerond,zAfgerond;
 var tekst = "AAN";
 
@@ -44,10 +44,11 @@ function draw() {
             y = round(y*pow(10,decimalen))/pow(10,decimalen);
             // **********************
             // f = lenzenFormule(x,y);
-            f = gravitatieEnergie(x,y);
+            // f = gravitatieEnergie(x,y);
+            f = geluid4(x,y);
             // **********************
             fAfgerond = round(f*pow(10,decimalen))/pow(10,decimalen);
-            z = terugBrengen(f,decimalen);
+            z = terugBrengen2(f,decimalen);
             zAfgerond = round(z);
             test = bepaalVerschil(z,zAfgerond);
             if (test > verschil && test> minimumVerschilWaarde) {
@@ -69,6 +70,27 @@ function draw() {
             }
         }
     }
+}
+
+function geluid1(f,v) {
+    var lab = v/f;
+    return lab;
+}
+
+function geluid2(s,v) {
+    var t = s/v;
+    return t;
+}
+
+function geluid3(l) {
+    var f = 343 / (4*l);
+    return f;
+}
+
+function geluid4(x1,x2) {
+    var f = (x2/x1);
+    var r = f*f;
+    return r;
 }
 
 function gravitatieEnergie(M,r) {
@@ -111,4 +133,20 @@ function bepaalVerschil(x,xaf) {
         dif = round(1/dif);
     }
     return dif;
+}
+
+function terugBrengen2(x,dec) {
+    if (x < 10) {
+        while (x < 10) {
+            x*=10;
+        }
+    }
+    if (x >= 10) {
+        while (x > 10) {
+            x/=10;
+        }
+        x*=10;
+    }
+    x = round(x*pow(10,dec))/pow(10,dec);
+    return x;
 }

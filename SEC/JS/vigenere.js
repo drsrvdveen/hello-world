@@ -31,16 +31,20 @@ function setup() {
     textSize(24);
     textAlign(TOP,TOP);
     canvas.parent('processing');
-    frameRate(10);
+    frameRate(50);
+    verwerk();
 }
 
 function draw() {
+    tekenVierkant();
+}
+
+function verwerk() {
     klareLijst = tekstNaarLijst(klareTekst);
     sleutelReeks = maakSleutelReeks(klareLijst);
     cijferLijst = vercijfer(klareLijst,sleutelReeks);
     cijferTekst = lijstNaarTekst(cijferLijst);
     background('silver');
-    tekenVierkant();
     text("De sleutel is: "+sleutel,480,20);
     text("De klare tekst luidt:\n"+klareTekst,480,50);
     tekenLijst(480,126,sleutelReeks);
@@ -52,8 +56,9 @@ function draw() {
 function tekstInvullen(t) {
     if (t == 'vigA') {klareTekst = vigA;}
     if (t == 'vigB') {klareTekst = vigB;}
-    if (t == 'slA') {sleutel= slA;}
+    if (t == 'slA') {sleutel = slA;}
     if (t == 'slB') {sleutel = slB;}
+    verwerk();
 }
 
 function lfilter(f) {

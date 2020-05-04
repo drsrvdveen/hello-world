@@ -98,7 +98,7 @@ button:hover,button:focus, a.button:hover {
     margin-top: 0.5em;
 }
 
-#cijfertekst,#uitvoerklaretekst {
+#cijfertekst,#klaretekst,#uitvoercijfertekst,#uitvoerklaretekst {
     border: 1px solid grey;
     padding: 10px;
     font-family: monospace;
