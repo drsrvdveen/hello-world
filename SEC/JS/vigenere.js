@@ -1,6 +1,9 @@
 var slA = "kalfje";
+slA = "ysaikeh";
 var slB = "pyromanen";
 var vigA = "derapenzijngaar";
+vigA = "dinsdag";
+//vigA = "bananen";
 var vigB = "komalshetluidt";
 
 var sleutel = slA;

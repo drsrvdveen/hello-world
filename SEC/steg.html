@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="CSS/security.css">
+    <script src="JS/p5.min.js"></script>
+    <script src='JS/steg.js'></script>    
+  </head>
+  <body>
+    <div class="container" id="clicker">
+      <blockquote id="menu">
+        <h1>Steganografie</h1>
+      </blockquote>
+    </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <td colspan="2" style="text-align: center;";>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(1);">foto #1</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(2);">foto #2</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(3);">foto #3</button>
+                </td>
+            </tr>  
+            <tr>
+                <td colspan="2" style="text-align: justify;";>
+                    Selecteer een foto met behulp van de buttons. Hiermee wordt een foto geladen, maar
+                    ook steeds een nieuwe random sleutel gegenereerd. De foto en de sleutel ondergaan
+                    daarna een AND-, OR & XOR-operatie. Vergelijk de uitvoer en trek je conclusies...<br>
+                    <br>Toegang tot de broncode en -bestanden? Vervang &eacute;&eacute;n van de foto's door
+                    jouw eigen foto en bekijk het resultaat.
+                </td>
+            </tr>                     
+        </table>
+      <div id="processing" style='border: 1px dashed grey; padding: 10px;'>
+      
+      </div>
+    </div>
+    <script src="JS/slo.js"></script>
+  </body>
+</html>
