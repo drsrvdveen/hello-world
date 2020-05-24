@@ -10,7 +10,6 @@ function preload() {
   foto2 = loadImage("images/frankmiller.png");
   foto3 = loadImage("images/bos.png");
   // bron Frank Miller: http://www.cs.columbia.edu/~CS4HS/talks/FrankMillerOneTimePad.pdf
-  foto = foto3;
 }
 
 function setup() {

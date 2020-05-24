@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="CSS/security.css">
     <script src="JS/p5.min.js"></script>
-    <script src='JS/xor.js'></script>    
+    <script src='JS/modes.js'></script>    
   </head>
   <body>
     <div class="container" id="clicker">
       <blockquote id="menu">
-        <h1>Versleutelen met AND, OR en XOR</h1>
+        <h1>Symmetrische encryptie: blok modus</h1>
       </blockquote>
     </div>
 
@@ -20,13 +20,20 @@
                     <button class="hoofdstuk" onclick="verwerkInvoer(1);">foto #1</button>
                     <button class="hoofdstuk" onclick="verwerkInvoer(2);">foto #2</button>
                     <button class="hoofdstuk" onclick="verwerkInvoer(3);">foto #3</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(16);">16bit</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(32);">32bit</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(64);">64bit</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(128);">128bit</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(256);">256bit</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(512);">512bit</button>
                 </td>
             </tr>  
             <tr>
                 <td colspan="2" style="text-align: justify;";>
                     Selecteer een foto met behulp van de buttons. Hiermee wordt een foto geladen, maar
-                    ook steeds een nieuwe random sleutel gegenereerd [even geduld: de verwerking kan eventjes duren]. De foto en de sleutel ondergaan
-                    daarna een AND-, OR & XOR-operatie. Vergelijk de uitvoer en trek je conclusies...<br>
+                    ook steeds een nieuwe random sleutel gegenereerd [even geduld: de verwerking kan eventjes duren].
+                    Met de pijltjestoetsen kun je de blokgrootte aanpassen.
+                    <br>Gebruik de buttons om de blokgrootte op &eacute;&eacute;n van de <i>default</i> waarden in te stellen.<br>
                     <br>Toegang tot de broncode en -bestanden? Vervang &eacute;&eacute;n van de foto's door
                     jouw eigen foto en bekijk het resultaat.
                 </td>
