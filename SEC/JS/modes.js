@@ -20,7 +20,7 @@ function keyReleased() {
     if (keyCode == 39 || keyCode == 38) {
         blokGrootte++;
     }
-    if (keyCode == 37 || keyCode == 40 && blokGrootte >= 2) {
+    if ((keyCode == 37 || keyCode == 40) && blokGrootte >= 2) {
         blokGrootte--;
     }
     verwerkInvoer();
@@ -37,9 +37,9 @@ function setup() {
 }
 
 function verwerkInvoer(f) {
-    if (f == 1) {foto = foto1; grensZW = 100;}
-    if (f == 2) {foto = foto2; grensZW = 110;}
-    if (f == 3) {foto = foto3; grensZW = 100;}
+    if (f == 1) {foto = foto1; grensZW = 100; laadFoto();}
+    if (f == 2) {foto = foto2; grensZW = 110; laadFoto();}
+    if (f == 3) {foto = foto3; grensZW = 100; laadFoto();}
     if (f == 16) {blokGrootte = 16;}
     if (f == 32) {blokGrootte = 32;}
     if (f == 64) {blokGrootte = 64;}
@@ -47,7 +47,6 @@ function verwerkInvoer(f) {
     if (f == 256) {blokGrootte = 256;}
     if (f == 512) {blokGrootte = 512;}
     genereerSleutel();
-    laadFoto();
     genereerECB();
     genereerCBC();
     toonOutput();
@@ -67,8 +66,6 @@ function genereerECB() {
     }
 }
 
-var test;
-
 function genereerCBC() {
     var blokPositie,nieuweBit;
     initialisatieVector = [];
@@ -82,6 +79,10 @@ function genereerCBC() {
         nieuweBit = klareTekst[k] ^ initialisatieVector[blokPositie];
         CBC.push(nieuweBit);
         initialisatieVector[blokPositie] = nieuweBit;
+    }
+    // daarna nog ECB-stap
+    for (k=0;k < klareTekst.length; k++) {
+        CBC[k]=(CBC[k] ^ (sleutel[k % blokGrootte]));
     }
 }
 
