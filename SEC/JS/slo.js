@@ -7,6 +7,6 @@ htmlContent += '<button onclick="window.location.href = \'vigenere.html\'">Vigen
 htmlContent += '<button onclick="window.location.href = \'vigfreq.html\'">Vigen&egrave;re - freq</button>';
 htmlContent += '<button onclick="window.location.href = \'xor.html\'">XOR</button>';
 htmlContent += '<button onclick="window.location.href = \'modes.html\'">Blok modus</button>';
-htmlContent += '<button onclick="window.location.href = \'prg.html\'">pseudo-random</button>';
+htmlContent += '<button onclick="window.location.href = \'prg.html\'">pseudorandom</button>';
 
 document.getElementById("menu").innerHTML = htmlContent;
