@@ -2,19 +2,19 @@ var tekstGrootte = 18;
 var kolomGrootte = 0;
 var kolomStap = 330;
 var rijenPerKolom = 20;
-var perfecteUitkomstenMeenemen = false;
+var perfecteUitkomstenMeenemen = true;
 
 var beginx = 0.10;
-var eindx = 0.95;
-var stapx = 0.01;
+var eindx = 0.75;
+var stapx = 0.001;
 
 var beginy = 15;
-var eindy = 60;
+var eindy = 16;
 var stapy = 1;
 
 var decimalen = 5;
 var verschil = 1;
-var minimumVerschilWaarde = 50;
+var minimumVerschilWaarde = 1;
 var f,z,fAfgerond,zAfgerond;
 var tekst = "AAN";
 
@@ -45,7 +45,7 @@ function draw() {
             // **********************
             // f = lenzenFormule(x,y);
             // f = gravitatieEnergie(x,y);
-            f = geluid4(x,y);
+            f = zwaar(x);
             // **********************
             fAfgerond = round(f*pow(10,decimalen))/pow(10,decimalen);
             z = terugBrengen2(f,decimalen);
@@ -70,6 +70,11 @@ function draw() {
             }
         }
     }
+}
+
+function zwaar(m) {
+    var fz = m*9.8;
+    return fz;
 }
 
 function geluid1(f,v) {

@@ -17,7 +17,7 @@ Als je tevreden bent of aan het eind van het les zit, bewaar je een nieuwe versi
 
 De standaard preview is handig, maar voor webdesign wil je vaak een fullscreen voorbeeld hebben. Typ daarvoor in de console:
 
-python3 -m http.server 3000
+python3 -m http.server 3000 &
 (en druk op enter)
 
 Rechtsboven krijg je nu een blauw menuutje: kies daar voor "Open Browser".
