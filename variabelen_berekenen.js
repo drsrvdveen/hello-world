@@ -2,14 +2,14 @@ var tekstGrootte = 18;
 var kolomGrootte = 0;
 var kolomStap = 330;
 var rijenPerKolom = 20;
-var perfecteUitkomstenMeenemen = true;
+var perfecteUitkomstenMeenemen = false;
 
-var beginx = 0.10;
-var eindx = 0.75;
-var stapx = 0.001;
+var beginx = 0.25;
+var eindx = 0.4;
+var stapx = 0.01;
 
-var beginy = 15;
-var eindy = 16;
+var beginy = 600;
+var eindy = 1300;
 var stapy = 1;
 
 var decimalen = 5;
@@ -45,7 +45,8 @@ function draw() {
             // **********************
             // f = lenzenFormule(x,y);
             // f = gravitatieEnergie(x,y);
-            f = zwaar(x);
+            // f = zwaar(x);
+            f = xmaaly(x,y);
             // **********************
             fAfgerond = round(f*pow(10,decimalen))/pow(10,decimalen);
             z = terugBrengen2(f,decimalen);
@@ -70,6 +71,11 @@ function draw() {
             }
         }
     }
+}
+
+function xmaaly(a,b) {
+    var uit = a*b;
+    return uit;
 }
 
 function zwaar(m) {
