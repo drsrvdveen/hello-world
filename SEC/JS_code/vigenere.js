@@ -1,8 +1,8 @@
 var slA = "kalfje";
-slA = "ysaikeh";
+// var slA = "ysaikeh";
 var slB = "pyromanen";
 var vigA = "derapenzijngaar";
-vigA = "dinsdag";
+// vigA = "dinsdag";
 //vigA = "bananen";
 var vigB = "komalshetluidt";
 

@@ -1,0 +1,28 @@
+body,html {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+#container {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+    margin-left: 10%;
+}
+
+li {
+    font-size: 40px;
+    display: inline; /* inline block */
+    border-bottom: 10px solid indianred;
+    width: 150px;
+    background-color: white;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: teal;
+}

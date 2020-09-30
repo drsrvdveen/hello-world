@@ -1,0 +1,48 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: yellow;
+}
+
+h1 {
+    color: red;
+    font-size: 40px;
+    padding: 0;
+    border: 2px solid red;
+}
+
+#container {
+    background-color: whitesmoke;
+    width: 80%;
+    height: 80%;
+    border-top: 35px solid black;
+    margin-left: 5%;
+}
+
+#hoofdpagina {
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+
+#menu {
+    width: 100%;
+    height: 10%;
+    background-color: grey;
+}
+
+#welkom {
+    width: 75%;
+    height: 100%;
+    background-color: indianred;
+}
+
+#reclame {
+    width: 25%;
+    height: 100%;
+    background-color: dodgerblue;
+}

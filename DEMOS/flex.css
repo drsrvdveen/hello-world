@@ -1,0 +1,21 @@
+#container {
+    display: flex;
+    background-color: dodgerblue;
+    padding: 50px;
+}
+
+#fotoblok {
+    background-image: url('taj_mahal.jpg');
+}
+
+.blok {
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    font-family: Courier;
+    font-size: 1em;
+    background-color: lightblue;
+    color: whitesmoke;
+    border: 1px solid black;
+    margin: 10px;
+}

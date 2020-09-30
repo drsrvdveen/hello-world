@@ -1,0 +1,23 @@
+/* Commentaar wordt in CSS op deze manier aangegeven */
+
+
+html,body {
+    width: 100%;
+    height: 100%;
+    color: red;
+}
+
+.algemeen {
+    margin-left: 10%;
+    margin-top: 2%;
+    width: 20%;
+    height: 20%;
+    background-color: dodgerblue;
+    color: whitesmoke;
+    font-size: 36px;
+}
+
+#uniek {
+    margin-left: 10%;
+    background-color: black;
+}

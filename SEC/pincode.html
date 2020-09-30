@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="CSS/security.css">
+    <script src="JS/p5.min.js"></script>
+    <script src='JS_code/pincode.js'></script>    
+  </head>
+  <body>
+    <div class="container" id="clicker">
+      <blockquote id="menu">
+        <h1>Pincode</h1>
+      </blockquote>
+    </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <td colspan="2" style="text-align: center;";>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(1);">foto #1</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(2);">foto #2</button>
+                    <button class="hoofdstuk" onclick="verwerkInvoer(3);">foto #3</button>
+                </td>
+            </tr>  
+            <tr>
+                <td colspan="2" style="text-align: justify;";>
+                    Beweeg je muis om beide figuren over elkaar te plaatsen.
+                </td>
+            </tr>                     
+        </table>
+      <div id="processing" style='border: 1px dashed grey; padding: 10px;'>
+      
+      </div>
+    </div>
+    <script src="JS/slo.js"></script>
+  </body>
+</html>
