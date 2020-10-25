@@ -1,0 +1,81 @@
+/*
+    VARIABELEN
+    bron palet: http://www.colourlovers.com/pattern/2871/Old_Lace....
+     */
+
+:root {
+    --PoisonTongue:#6A001A;
+    --trinity: #411D41;
+    --HouseArrest: #A55C5C;
+    --Oldlace: #DDD7BB;
+    --Arsenic: #C8DCE0;
+
+    --zijde: 25%;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('bloemen.jpg');
+    background-size: cover;
+}
+
+h1 {
+    color: var(--HouseArrest);
+    font-size: 40px;
+    padding: 0 5% 0 5%;
+    margin: 0;
+    margin-top: 0.5em;
+    border: 2px solid var(--HouseArrest);
+    display: inline-block;
+    width: 80%;
+}
+
+h2 {
+    color: var(--HouseArrest);
+    background-color: var(--Oldlace);
+    font-size: 40px;
+    padding: 0 5% 0 5%;
+    margin: 0;
+    margin-top: 0.5em;
+    display: inline-block;
+    width: 50%;
+}
+
+#container {
+    background-color: transparent;
+    width: 80%;
+    height: 80%;
+    border-top: 15px solid var(--HouseArrest);
+    margin-left: 5%;
+}
+
+#hoofdpagina {
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+
+#menu {
+    width: 100%;
+    height: 10%;
+    background-color: var(--Oldlace);
+}
+
+#welkom {
+    width: 75%;
+    height: 100%;
+    background-color: var(--Arsenic);
+    opacity: 0.75;
+}
+
+#reclame {
+    width: 25%;
+    height: 100%;
+    background-color: var(--trinity);
+}

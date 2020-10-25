@@ -1,0 +1,46 @@
+.buttonstyle {
+    background-color:rgb(32, 32, 32);
+    width: 20%;
+    height: 40px;
+    border: none;
+    color: gold;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    transition-duration: 0.4s;
+    opacity: 0.8;
+}
+
+.buttonstyle:hover {
+    opacity: 0.5;
+}
+
+body,html {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background-color: silver;
+}
+
+#container {
+    background-color: dodgerblue;
+    width: 80%;
+    height: 75%;
+    margin-left: 10%;
+}
+
+ul {
+    padding: 0;
+    background-color: silver;
+}
+
+li {
+    display: inline;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    font-size: 30px;
+    color: seashell;
+    font-variant: small-caps;
+    padding-left: 20px;
+}

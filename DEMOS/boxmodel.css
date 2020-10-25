@@ -1,9 +1,42 @@
 #container {
-    background-color: dodgerblue;
-    margin: 0;
-    padding: 0;
+    background-color: red;
+    display: flex;
 }
 
-.blok {
+.inhoudsblok {
+    background-color: lightblue;
+    width: 300px;
+    height: 200px;
+    border: 5px solid black;
+    padding: 10px;
+    padding-top: 50px;
+    margin-bottom: 25px;
+    margin-right: 10px;
+}
 
+body {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#model {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#model img {
+    width: 60%;
 }

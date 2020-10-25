@@ -1,0 +1,32 @@
+
+    /*  Google Fonts kun je gratis gebruiken:
+        https://fonts.google.com/?query=Roboto+Condensed
+    */
+		@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+ 		h1 {
+ 		font-family: sans-serif;
+		font-size:64px;
+		}
+    .gekleurd_blok {
+      background-color:#fbc4be;
+    }
+		
+		body {
+			font-size: 100%; /* komt overeen met 16px */
+		}
+		
+		h2,h3,h4,h5 {
+			font-family: Arial;
+		}
+		
+		h2 {
+			font-size: 40px; /* pixels; deze waarde is absoluut. */
+		}
+		
+		h3 {
+			font-size: 2.5em; /* font-eenheden: 2,5 * 16 = 40 */
+		}
+		
+		h4 {
+			font-size: 250%; /* procenten */
+		}		

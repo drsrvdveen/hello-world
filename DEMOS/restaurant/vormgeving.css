@@ -1,0 +1,131 @@
+
+
+#menu h1,h3 {
+    margin: 0;
+    color: #555555;
+    font-family: Verdana, sans-serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 48px;
+    letter-spacing: 10px;
+    line-height: 1.2;
+}
+
+#menu h3 {
+    font-family: 'Indie Flower', serif;
+}
+
+#menu h2 {
+    margin: 0;
+    color: green;
+    font-family: Georgia, serif;
+    /* font-family: Monoton, serif; */
+    line-height: 1.2;    
+}
+
+p {
+    text-align: justify;
+    line-height: 1.5;
+    font-family: Georgia, serif;
+    /* font-family: 'Cinzel', serif; */
+}
+
+/*
+KLEURENPALET
+    roze:        #EC008C
+    groen:       #147219
+    rood:        #161b1b
+    donkergrijs: #B5B5B5
+    lichtgrijs:  #D1D1D1
+  
+*/
+
+html,body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #EC008C;
+}
+
+#menublok {
+    width: 60%;
+    height: auto;
+    background-color: white;
+    border: 10px solid #B5B5B5;
+    margin: auto;
+    display: flex;
+}
+
+#menu {
+    width: 50%;
+    background-color: transparent;
+    padding: 1%;
+}
+
+#fotocontainer {
+    width: 60%;
+    height: 50%;
+    background-color: white;
+    background-image: url(boerderij.jpg);      
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 10px solid #B5B5B5;
+    margin: auto;
+}
+
+#restaurant {  
+    opacity: 1.0;
+    width: 50%;
+}
+
+#restaurant h1 {
+    background-image: url(FFFFFF-0.7.png); /* via http://www.1x1px.me */
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 80px;
+    color: #e61b1b;
+    margin-top: 2%;
+    padding-right: 3%;  
+}
+
+#restaurant h2 {
+    font-family: sans-serif;
+    font-size: 350px;
+    color: #147219;
+    margin-top: -175px;
+    opacity: 0.55;
+}
+
+#menu-container {
+    display: flex;
+    width: 60%;
+    margin: auto;
+}
+
+.menu-cirkel {
+    border: 5px solid #B5B5B5;
+    margin: 2%;
+    width: 180px;
+    height: 180px;
+    border-radius: 180px;
+    background-color: white;
+    text-align: center;
+    line-height: 180px;
+    font-family: sans-serif;
+    font-size: 100px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;   
+}
+
+.menu-cirkel:hover {
+    background-color: transparent;
+}
+
+.menu-cirkel a {
+    text-decoration: none;
+}
+
